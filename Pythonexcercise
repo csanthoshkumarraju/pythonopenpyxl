@@ -1,0 +1,255 @@
+# Files were stored in pycharm. This window top left corner file icon.
+# ******************************************************************************
+# write a data to specific cell in new file
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# wb = Workbook()
+# sheet = wb.active
+# # inserting method 1
+# sheet['A1'] = 'Name'
+# sheet['B1'] = 'Age'
+# sheet['A2'] = 'Abc'
+# sheet['B2'] = 21
+# # inserting method 2
+# sheet.cell(row=3,column = 1).value = 'FGH'
+# sheet.cell(row=3,column = 2).value = 23
+# wb.save('datainsertinspecificcell.xlsx')
+# inserting method 3
+# from openpyxl import Workbook
+# wb = Workbook()
+# sheet = wb.active
+# data = (
+#     ('name','age','City'),
+#     ('abc',21,'BLR'),
+#     ('thr',22,'dgv'),
+#     ('sfv',23,'fdgb'),
+#     ('drg',24,'fdxbg')
+# )
+# for i in data:
+#     sheet.append(i)
+# wb.save('multipledatainsertinspecificcell.xlsx')
+# *******************************************************************************
+# Files were stored in pycharm This window top left corner file icon.
+# ******************************************************************************
+# write a data to specific cell in existing file
+# ******************************************************************************
+# import openpyxl
+from openpyxl import Workbook
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# sheet = wb.active
+# # inserting method 1
+# sheet['C1'] = 'CLG'
+# sheet['D1'] = 'EDu'
+# sheet['C2'] = 'JNTU'
+# sheet['D2'] =  'B.tech'
+# # inserting method 2
+# sheet.cell(row=3,column = 1).value = 'tgezr'
+# sheet.cell(row=4,column = 2).value = 24
+# wb.save('datainsertinspecificcell.xlsx')
+
+# ******************************************************************************
+# writing a row data to row
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# wb = Workbook()
+# sheet = wb.active
+# data = (('dwe','fzegv','rwRFTEW','GRDGVD','GFERDGR','FSGRG','GAERDGZHB','REWATGERGTE','GTAERGTERGT','TAGFERGTER'))
+# sheet.append(data)
+# wb.save('datainsertinginto row.xlsx')
+# ******************************************************************************
+# writing  data to column
+# ******************************************************************************
+# from openpyxl import Workbook
+# wb = Workbook()
+# sheet = wb.active
+# data = (
+#         ('name', 'age', 'City'),
+#             ('abc',21,'BLR'),
+#             ('thr',22,'dgv'),
+#             ('sfv',23,'fdgb'),
+#             ('drg',24,'fdxbg')
+# )
+#
+# for i in data:
+#         sheet.append(i)
+# wb.save('datainsertingintocolumn.xlsx')
+# ******************************************************************************
+# writing a row data to different sheets
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# wb = Workbook()
+# sheet = wb.active
+# sheet2 = wb.create_sheet('sheet2')
+# sheet3 = wb.create_sheet('sheet3')
+# sheet4 = wb.create_sheet('sheet4')
+# data = (
+#         ('name', 'age', 'City'),
+#             ('abc',21,'BLR'),
+#             ('thr',22,'dgv'),
+#             ('sfv',23,'fdgb'),
+#             ('drg',24,'fdxbg')
+# )
+# for i in data:
+#         sheet.append(i)
+#         sheet2.append(i)
+# sheet3['A1'] = 'CLG'
+# sheet3['B1'] = 'EDu'
+# sheet3['A2'] = 'JNTU'
+# sheet3['B2'] =  'B.tech'
+# # inserting method 2
+# sheet4.cell(row=1,column = 1).value = 'tgezr'
+# sheet4.cell(row=2,column = 1).value = 24
+# wb.save('sheetspractice.xlsx')
+# wb.close()
+# ******************************************************************************
+# read a cell value
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# sheet = wb.active
+# x1 = sheet['A1']
+# x2 = sheet['B1']
+# x3 = sheet.cell(row = 3,column = 1)
+# print(x1.value,x2.value,x3.value)
+
+# ******************************************************************************
+# Read multiple cells
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# sheet = wb.active
+# for i in sheet.iter_rows(min_row=1,min_col=1,max_row=4,max_col=4):
+#     for j in i:
+#         print(j.value, end = " ")
+
+# ******************************************************************************
+# iter rows
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# sheet = wb.active
+# for i in sheet.iter_rows(min_row=1,min_col=1,max_row=4,max_col=4):
+#     for j in i:
+#         print(j.value, end = " ")
+# ******************************************************************************
+# Read a row value
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# # from openpyxl import load_workbook
+# # wb1 = load_workbook()
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# sheet = wb.active
+# for row in sheet.iter_rows(min_row=2,max_row=2,min_col=1,max_col=4):
+#     for cell in row:
+#         print(cell.value)
+# ******************************************************************************
+# Read a column value
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# # from openpyxl import load_workbook
+# # wb1 = load_workbook()
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# sheet = wb.active
+# for row in sheet.iter_rows(min_row=1,max_row=4,min_col=2,max_col=2):
+#     for cell in row:
+#         print(cell.value)
+# ******************************************************************************
+# Read a range values
+# ******************************************************************************
+# import openpyxl
+# from openpyxl import Workbook
+# # from openpyxl import load_workbook
+# # wb1 = load_workbook()
+# wb = openpyxl.load_workbook('datainsertinspecificcell.xlsx')
+# sheet = wb.active
+# for row in sheet.iter_rows(min_row=1,max_row=4,min_col=1,max_col=4):
+#     for cell in row:
+#         print(cell.value)
+# ******************************************************************************
+# writing a row data to different sheets
+# ******************************************************************************
+
+# ******************************************************************************
+# writing a column data to different sheets
+# ******************************************************************************
+
+# ******************************************************************************
+# reading a row data to different sheets
+# ******************************************************************************
+
+# ******************************************************************************
+# Replacing a cell value
+# ******************************************************************************
+
+# ******************************************************************************
+# change font,size
+# ******************************************************************************
+
+# ******************************************************************************
+# colors
+# ******************************************************************************
+
+# ******************************************************************************
+# insert a row
+# ******************************************************************************
+import openpyxl
+# from openpyxl import Workbook
+# wb = Workbook()
+# sheet = wb.active
+# data = (('dwe','fzegv','rwRFTEW','GRDGVD','GFERDGR','FSGRG','GAERDGZHB','REWATGERGTE','GTAERGTERGT','TAGFERGTER'))
+# sheet.append(data)
+# wb.save('datainsertingintorow1.xlsx')
+# ******************************************************************************
+# delete a row
+# ******************************************************************************
+
+# ******************************************************************************
+# Formulas
+# ******************************************************************************
+
+# ******************************************************************************
+# filter and sort
+# ******************************************************************************
+
+# ******************************************************************************
+# using filters and sorts
+# ******************************************************************************
+
+# ******************************************************************************
+# count of rows
+# ******************************************************************************
+
+# ******************************************************************************
+# count of columns
+# ******************************************************************************
+
+# ******************************************************************************
+# print column names
+# ******************************************************************************
+
+# ******************************************************************************
+# print first column
+# ******************************************************************************
+
+
+# ******************************************************************************
+# merge cells and unmerge
+# ******************************************************************************
+
+# ******************************************************************************
+# sheet names
+# ******************************************************************************
+
+# ******************************************************************************
+# importing data
+# ******************************************************************************
+
