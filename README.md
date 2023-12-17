@@ -3,7 +3,7 @@ source document //
 https://openpyxl.readthedocs.io
 document //
  # ** I have learnt this codes from Conny Soderholm **
- # ** these codes for my refrence only These arec not my own codes took from Conny Soderholm Udemy course. **
+ # ** these codes for my refrence only These are not my own codes took from Conny Soderholm Udemy course. **
 import openpyxl
 from openpyxl import Workbook
 from openpyxl import load_workbook
